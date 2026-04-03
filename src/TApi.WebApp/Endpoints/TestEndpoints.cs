@@ -9,31 +9,20 @@ internal static class TestEndpoints
 {
     internal static void MapTestEndpoints(this RouteGroupBuilder group)
     {
-        group.MapGet("items", GetTestItems);
+        group.MapGet("items", GetTestItems).RequireAuthorization();
     }
 
-    private static Results<Ok<ItemListDto>, NotFound<ProblemDetails>, ValidationProblem> GetTestItems(
+    private static Results<Ok<ItemListDto>, ValidationProblem> GetTestItems(
         [Range(1, 2)]
-        int page = 1,
-        bool simulateNotFound = false)
+        int page = 1)
     {
-        if (simulateNotFound)
-        {
-            return TypedResults.NotFound(new ProblemDetails
-            {
-                Title = "Simulated Not Found",
-                Detail = "A simulated not found error.",
-                Status = StatusCodes.Status404NotFound
-            });
-        }
-
         return TypedResults.Ok(new ItemListDto
         {
             Items =
             [
-                new() { Name = "Item 1", Description = "Description of Item 1." },
-                new() { Name = "Item 2", Description = "Description of Item 2." },
-                new() { Name = "Item 3", Description = "Description of Item 3." }
+                new() { Name = $"Item {(page - 1) * 3 + 1}", Description = $"Description of Item {(page - 1) * 3 + 1}." },
+                new() { Name = $"Item {(page - 1) * 3 + 2}", Description = $"Description of Item {(page - 1) * 3 + 2}." },
+                new() { Name = $"Item {(page - 1) * 3 + 3}", Description = $"Description of Item {(page - 1) * 3 + 3}." }
             ]
         });
     }
