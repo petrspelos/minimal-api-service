@@ -1,4 +1,4 @@
-namespace TApi.WebApp.Services.Authorization;
+namespace TApi.WebApp.Services.Authentication;
 
 internal sealed class CachedOpenIdConfigurationProvider(
     IOpenIdConfigurationProvider inner)

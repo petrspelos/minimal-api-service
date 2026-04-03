@@ -1,6 +1,6 @@
 using System.Text.Json;
 
-namespace TApi.WebApp.Services.Authorization;
+namespace TApi.WebApp.Services.Authentication;
 
 internal sealed class OpenIdConfigurationProvider(
     HttpClient httpClient,
@@ -8,7 +8,6 @@ internal sealed class OpenIdConfigurationProvider(
     : IOpenIdConfigurationProvider
 {
     private readonly HttpClient _httpClient = httpClient;
-
     private readonly string _metadataAddress = config["Keycloak:MetadataAddress"]
             ?? throw new InvalidOperationException("Missing Keycloak metadata address.");
 

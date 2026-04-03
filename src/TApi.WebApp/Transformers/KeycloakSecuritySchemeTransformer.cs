@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.OpenApi;
 using Microsoft.OpenApi;
-using TApi.WebApp.Services.Authorization;
+using TApi.WebApp.Services.Authentication;
 
 namespace TApi.WebApp.Transformers;
 

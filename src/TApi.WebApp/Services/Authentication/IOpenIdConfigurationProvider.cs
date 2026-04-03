@@ -1,4 +1,4 @@
-namespace TApi.WebApp.Services.Authorization;
+namespace TApi.WebApp.Services.Authentication;
 
 internal interface IOpenIdConfigurationProvider
 {
