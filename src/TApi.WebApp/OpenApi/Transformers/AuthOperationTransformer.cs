@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.OpenApi;
 using Microsoft.OpenApi;
 
-namespace TApi.WebApp.Transformers;
+namespace TApi.WebApp.OpenApi.Transformers;
 
 internal sealed class AuthOperationTransformer : IOpenApiOperationTransformer
 {

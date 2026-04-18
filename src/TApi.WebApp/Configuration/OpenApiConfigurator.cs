@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.OpenApi;
-using TApi.WebApp.Transformers;
+using TApi.WebApp.OpenApi.Transformers;
 
 namespace TApi.WebApp.Configuration;
 
@@ -14,5 +14,6 @@ internal static class OpenApiConfigurator
         });
         options.AddDocumentTransformer<KeycloakSecuritySchemeTransformer>();
         options.AddOperationTransformer<AuthOperationTransformer>();
+        options.AddSchemaTransformer<EnumDiscriminatingPropertySchemaTransformer>();
     }
 }

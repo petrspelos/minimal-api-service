@@ -9,6 +9,7 @@ builder.Services.AddAuthorization();
 builder.Services.AddOpenApi(OpenApiConfigurator.Configure);
 builder.Services.AddProblemDetails();
 builder.Services.AddValidation();
+builder.Services.ConfigureHttpJsonOptions(HttpjsonOptionsConfigurator.Configure);
 
 // TODO: Implement Correlation ID headers (Correlate)
 

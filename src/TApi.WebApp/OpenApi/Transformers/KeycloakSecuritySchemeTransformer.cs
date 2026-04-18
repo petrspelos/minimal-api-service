@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.OpenApi;
 using Microsoft.OpenApi;
 using TApi.WebApp.Services.Authentication;
 
-namespace TApi.WebApp.Transformers;
+namespace TApi.WebApp.OpenApi.Transformers;
 
 internal sealed class KeycloakSecuritySchemeTransformer(
     IOpenIdConfigurationProvider provider)
