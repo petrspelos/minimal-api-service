@@ -12,8 +12,6 @@ internal static class OpenApiConfigurator
             document.Servers?.Clear();
             return Task.CompletedTask;
         });
-        options.AddDocumentTransformer<KeycloakSecuritySchemeTransformer>();
-        options.AddOperationTransformer<AuthOperationTransformer>();
         options.AddSchemaTransformer<EnumDiscriminatingPropertySchemaTransformer>();
     }
 }

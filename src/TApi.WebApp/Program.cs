@@ -5,7 +5,7 @@ using TApi.WebApp.Endpoints;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.AddAuthentication();
-builder.Services.AddAuthorization();
+builder.AddAuthorization();
 builder.Services.AddOpenApi(OpenApiConfigurator.Configure);
 builder.Services.AddProblemDetails();
 builder.Services.AddValidation();
@@ -15,7 +15,6 @@ builder.Services.ConfigureHttpJsonOptions(HttpjsonOptionsConfigurator.Configure)
 
 var app = builder.Build();
 
-app.UseAuthentication();
 app.UseAuthorization();
 
 if (app.Environment.IsDevelopment())
